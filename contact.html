@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cosmetic Studio - Contact</title>
+  <style>
+     body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color:powderblue;
+    }
+    header {
+      background-color: #f9f9f9;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+    }
+    nav {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+    }
+    nav a:hover {
+      background-color: #555;
+    }
+    section {
+      padding: 20px;
+    }
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #555;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Cosmetic Studio</h1>
+  </header>
+
+
+  <section>
+    <h2>Contact Us</h2>
+    <p>Have a question or want to book an appointment? Fill out the form below and we'll get back to you as soon as possible!</p>
+    <form action="#" method="post" onsubmit="return submitForm()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="confirmation-message" style="display: none;">Your response has been submitted. Thank you for contacting us!</p>
+  </section>
+
+  <footer>
+    &copy; 2024 Cosmetic Studio. All rights reserved.
+  </footer>
+
+  <script>
+    function submitForm() {
+      // You can add your form submission logic here, like sending data to a server
+      // For demonstration purposes, we're just showing a confirmation message
+      document.getElementById("confirmation-message").style.display = "block";
+      return false; // Prevent form from submitting and reloading the page
+    }
+  </script>
+</body>
+</html>

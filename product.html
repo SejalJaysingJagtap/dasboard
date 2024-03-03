@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmetic Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: powderblue;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            color: white;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            background-color: black;
+        }
+
+        #products {
+            padding: 20px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 columns */
+            grid-template-rows: repeat(4, auto); /* 4 rows */
+            grid-gap: 20px;
+            padding: 40px 0;
+            align-items: center;
+        }
+
+        .category-grid .product {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .category-grid .product img {
+            max-width: 100%;
+            height: 80%;
+        }
+
+        .category-grid .product h3 {
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .category-grid .product p {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        h2 {
+            text-align: center;
+            background-color: plum;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            max-width: 80%;
+            max-height: 80%;
+            overflow: auto;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+        button {
+            background-color:black;
+            color:white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+<header>
+    <h1>Cosmetic Products</h1>
+    <nav>
+        <ul>
+            <li><a href="#lipstick">Lipstick</a></li>
+            <li><a href="#mascara">Mascara</a></li>
+            <li><a href="#kajal">Kajal</a></li>
+            <li><a href="#skincare">Skincare</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="products">
+    <h2 id="lipstick">Lipstick</h2>
+    <div class="category-grid">
+        <div class="product" onclick="showPopup('lip1jpg.jpg', 'Lipstick 1', '$10','Description: Lipstick is a cosmetic product applied to the lips to add color and texture.')">
+            <img src="lip1jpg.jpg" alt="Lipstick 1">
+            <h3>Lipstick 1</h3>
+            <h6>Description: Lipstick is a cosmetic product applied to the lips to add color and texture.</h6>
+            <p>$10</p>
+            <button onclick="redirectToContact()">Buy Now</button>
+        </div>
+        <div class="product" onclick="showPopup('lip2.jpg', 'Lipstick 2', '$12','Description: They often contain moisturizing ingredients to keep the lips hydrated')">
+            <img src="lip2.jpg" alt="Lipstick 2">
+            <h3>Lipstick 2</h3>
+            <h6>Description: They often contain moisturizing ingredients to keep the lips hydrated</h6>
+            <p>$12</p>
+            <button onclick="redirectToContact()">Buy Now</button>
+        </div>
+        <div class="product" onclick="showPopup('lip5.jpg', 'Lipstick 2', '$12','Description: Lipstick is a cosmetic product applied to the lips to add color and texture.')">
+            <img src="lip5.jpg" alt="Lipstick 3">
+            <h3>Lipstick 4</h3>
+            <h6>Description: Lipstick is a cosmetic product applied to the lips to add color and texture.</h6>
+            <p>$12</p>
+            <button onclick="redirectToContact()">Buy Now</button>
+        </div>
+        <div class="product" onclick="showPopup('lip6.jpg', 'Lipstick 2', '$12','Description: They often contain moisturizing ingredients to keep the lips hydrated')">
+            <img src="lip6.jpg" alt="Lipstick 4">
+            <h3>Lipstick 4</h3>
+            <h6>Description: They often contain moisturizing ingredients to keep the lips hydrated</h6>
+            <p>$12</p>
+            <button onclick="redirectToContact()">Buy Now</button>
+        </div>
+    </div>
+
+    <h2 id="mascara">Mascara</h2>
+    <div class="category-grid">
+        <div class="product" onclick="showPopup('ma1.jpg', 'maskara1', '$10','Description: It typically comes in a tube with a wand applicator.')">
+            <img src="ma1.jpg" alt="Mascara 1">
+            <h3>Mascara 1</h3>
+            <h6>Description: It typically comes in a tube with a wand applicator.</h6>
+            <p>$15</p>
+            <button onclick="redirectToContact()">Buy Now</button>
+        </div>
+        <div class="product" onclick="showPopup('ma2.jpg', 'maskara2', '$14','Description: Mascara is a makeup product used to darken, lengthen, and define the eyelashes.')">
+            <img src="ma2.jpg" alt="Mascara 2">
+            <h3>Mascara 2</h3>
+            <h6>Description: Mascara is a makeup product used to darken, lengthen, and define the eyelashes.</h6>
+            <p>$18</p>
+            <button onclick="redirectToContact()">Buy Now</button>
+        </div>
+        <div class="product" onclick="showPopup('ma3.jpg', 'maskara3', '$20','Description: It typically comes in a tube with a wand applicator.')">
+            <img src="ma3.jpg" alt="Mascara 3">
+            <h3>Mascara 2</h3>
+            <h6>Description: It typically comes in a tube with a wand applicator.</h6>
+            <p>$18</p>
+            <button onclick="redirectToContact()">Buy Now</button>
+        </div>
+        <div class="product" onclick="showPopup('ma4.jpg', 'maskara4', '$16','Description: Mascara is a makeup product used to darken, lengthen, and define the eyelashes.')">
+            <img src="ma4.jpg" alt="Mascara 4">
+            <h3>Mascara 2</h3>
+            <h6>Description: Mascara is a makeup product used to darken, lengthen, and define the eyelashes.</h6>
+            <p>$18</p>
+            <button onclick="redirectToContact()">Buy Now</button>
+        </div>
+    </div>
+
+    <h2 id="kajal">Kajal</h2>
+    <div class="category-grid">
+        <div class="product" onclick="showPopup('ka1.jpg', 'kajal1', '$10','Description: Its typically applied to the waterline and inner rims of the eyes to create a dramatic look.')">
+            <img src="ka1.jpg" alt="Kajal 1">
+            <h3>Kajal 1</h3>
+            <h6>Description: It's typically applied to the waterline and inner rims of the eyes to create a dramatic look.</h6>
+            <p>$8</p>
+            <button onclick="redirectToContact()">Buy Now</button>
+        </div>
+        <div class="product" onclick="showPopup('ka2.jpg', 'kajal2', '$19','Description: It comes in different shades, including traditional black and brown, and sometimes colored varieties for more creative looks.')">
+            <img src="ka2.jpg" alt="Kajal 2">
+            <h3>Kajal 2</h3>
+            <h6>Description: It comes in different shades, including traditional black and brown, and sometimes colored varieties for more creative looks.</h6>
+            <p>$10</p>
+            <button onclick="redirectToContact()">Buy Now</button>
+        </div>
+        <div class="product" onclick="showPopup('ka3.jpg', 'kajal3', '$15','Description: Its typically applied to the waterline and inner rims of the eyes to create a dramatic look.')">
+            <img src="ka3.jpg" alt="Kajal 3">
+            <h3>Kajal 2</h3>
+            <h6>Description: It's typically applied to the waterline and inner rims of the eyes to create a dramatic look.</h6>
+            <p>$10</p>
+            <button onclick="redirectToContact()">Buy Now</button>
+        </div>
+        <div class="product" onclick="showPopup('ka4.jpg', 'kajal4', '$13','Description: It comes in different shades, including traditional black and brown, and sometimes colored varieties for more creative looks.')">
+            <img src="ka4.jpg" alt="Kajal 4">
+            <h3>Kajal 2</h3>
+            <h6>Description: It comes in different shades, including traditional black and brown, and sometimes colored varieties for more creative looks.</h6>
+            <p>$10</p>
+            <button onclick="redirectToContact()">Buy Now</button>
+        </div>
+    </div>
+
+    <h2 id="skincare">Skincare</h2>
+    <div class="category-grid">
+        <div class="product" onclick="showPopup('sk1.jpg', 'skincare1', '$14','Description: This category includes cleansers, moisturizers, serums, toners, masks, and more.')">
+            <img src="sk1.jpg" alt="Skincare 1">
+            <h3>Skincare 1</h3>
+            <h6>Description: This category includes cleansers, moisturizers, serums, toners, masks, and more.</h6>
+            <p>$20</p>
+            <button onclick="redirectToContact()">Buy Now</button>
+        </div>
+        <div class="product" onclick="showPopup('sk2.jpg', 'skincare2', '$18','Description: Skincare products may target specific concerns such as acne, aging, dryness, sensitivity, or uneven skin tone.')">
+            <img src="sk2.jpg" alt="Skincare 2">
+            <h3>Skincare 2</h3>
+            <h6>Description: Skincare products may target specific concerns such as acne, aging, dryness, sensitivity, or uneven skin tone.</h6>
+            <p>$25</p>
+            <button onclick="redirectToContact()">Buy Now</button>
+        </div>
+        <div class="product" onclick="showPopup('sk3.jpg', 'skincare', '$19','Description: This category includes cleansers, moisturizers, serums, toners, masks, and more.')">
+            <img src="sk3.jpg" alt="Skincare 3">
+            <h3>Skincare 2</h3>
+            <h6>Description: This category includes cleansers, moisturizers, serums, toners, masks, and more.</h6>
+            <p>$25</p>
+            <button onclick="redirectToContact()">Buy Now</button>
+        </div>
+        <div class="product" onclick="showPopup('sk4.jpg', 'skincare4', '$18','Description: Skincare products may target specific concerns such as acne, aging, dryness, sensitivity, or uneven skin tone.')">
+            <img src="sk4.jpg" alt="Skincare 4">
+            <h3>Skincare 2</h3>
+            <h6>Description: Skincare products may target specific concerns such as acne, aging, dryness, sensitivity, or uneven skin tone.</h6>
+            <p>$25</p>
+            <button onclick="redirectToContact()">Buy Now</button>
+        </div>
+    </div>
+
+    <div id="popup" class="popup">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <img id="popup-image" src="" alt="">
+        <h3 id="popup-title"></h3>
+        <p id="popup-price"></p>
+        <h6 id="popup-description"></h6>
+    </div>
+</section>
+
+<script>
+    function showPopup(imageSrc, title, price,description) {
+        document.getElementById('popup-image').src = imageSrc;
+        document.getElementById('popup-title').innerText = title;
+        document.getElementById('popup-price').innerText = price;
+        document.getElementById('popup-description').innerText = description;
+        document.getElementById('popup').style.display = 'block';
+    }
+
+    function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+    }
+    function redirectToContact() {
+            // Redirect to the contact.html page
+            window.location.href = 'cart.html';
+        }
+
+        // Attach click event to all "Buy Now" buttons
+        const buyButtons = document.querySelectorAll('.product button');
+        buyButtons.forEach(button => {
+            button.addEventListener('click', redirectToContact);
+        });
+    
+</script>
+</body>
+</html>
